@@ -1,0 +1,368 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Resuelve Fácil — Respuestas claras a tus dudas</title>
+  <meta name="description" content="Respuestas claras, sencillas y útiles para resolver tus dudas del día a día.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #202124;
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #111827;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .hero {
+      background: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #6b7280;
+      font-size: 18px;
+    }
+
+    .search {
+      max-width: 650px;
+      margin: 30px auto 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .search button {
+      padding: 16px 24px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #111827;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 55px;
+    }
+
+    .category {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #111827;
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .category .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .category h3 {
+      margin-bottom: 6px;
+    }
+
+    .category p {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .article {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+
+    .article-content {
+      padding: 22px;
+    }
+
+    .article h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .article p {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .read {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      margin-top: 70px;
+      padding: 40px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer a {
+      color: #d1d5db;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .categories,
+      .articles {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .categories,
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .search {
+        flex-direction: column;
+      }
+
+      .search button {
+        width: 100%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Resuelve<span>Fácil</span></a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>¿Tienes una duda?</h1>
+  <p>
+    Encuentra respuestas claras, sencillas y útiles para las preguntas
+    que aparecen en tu día a día.
+  </p>
+
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="¿Qué quieres saber?">
+    <button onclick="buscar()">Buscar</button>
+  </div>
+</section>
+
+<main class="container">
+
+  <h2 class="section-title">Explora por categorías</h2>
+
+  <section class="categories">
+
+    <a class="category" href="#">
+      <div class="icon">💻</div>
+      <h3>Tecnología</h3>
+      <p>Guías sencillas para móviles, ordenadores y aplicaciones.</p>
+    </a>
+
+    <a class="category" href="#">
+      <div class="icon">📱</div>
+      <h3>Móviles y apps</h3>
+      <p>Trucos y soluciones para las aplicaciones que utilizas cada día.</p>
+    </a>
+
+    <a class="category" href="#">
+      <div class="icon">🤖</div>
+      <h3>Inteligencia artificial</h3>
+      <p>Aprende a utilizar las herramientas de IA de forma sencilla.</p>
+    </a>
+
+    <a class="category" href="#">
+      <div class="icon">🏠</div>
+      <h3>Hogar</h3>
+      <p>Consejos y soluciones prácticas para tu casa.</p>
+    </a>
+
+    <a class="category" href="#">
+      <div class="icon">🍳</div>
+      <h3>Cocina</h3>
+      <p>Tiempos, trucos y respuestas para cocinar mejor.</p>
+    </a>
+
+    <a class="category" href="#">
+      <div class="icon">💡</div>
+      <h3>Curiosidades</h3>
+      <p>Respuestas a preguntas que siempre has tenido.</p>
+    </a>
+
+  </section>
+
+  <h2 class="section-title">Últimos artículos</h2>
+
+  <section class="articles">
+
+    <article class="article">
+      <div class="article-content">
+        <h3>Cómo hacer una captura de pantalla</h3>
+        <p>
+          Aprende las formas más sencillas de hacer una captura
+          de pantalla en diferentes dispositivos.
+        </p>
+        <a class="read" href="#">Leer artículo →</a>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-content">
+        <h3>Cómo convertir un PDF a Word</h3>
+        <p>
+          Te explicamos las opciones más fáciles para convertir
+          tus documentos sin complicaciones.
+        </p>
+        <a class="read" href="#">Leer artículo →</a>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-content">
+        <h3>Qué significa una dirección IP</h3>
+        <p>
+          Explicación sencilla de qué es una dirección IP
+          y para qué sirve.
+        </p>
+        <a class="read" href="#">Leer artículo →</a>
+      </div>
+    </article>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong>Resuelve Fácil</strong>
+      <p>Respuestas claras para la vida diaria.</p>
+    </div>
+
+    <div>
+      <a href="#">Privacidad</a><br>
+      <a href="#">Cookies</a><br>
+      <a href="#">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function buscar() {
+    const pregunta = document.getElementById("searchInput").value.trim();
+
+    if (pregunta === "") {
+      alert("Escribe una pregunta para buscar.");
+      return;
+    }
+
+    alert("Próximamente podremos buscar: " + pregunta);
+  }
+</script>
+
+</body>
+</html>
+```
